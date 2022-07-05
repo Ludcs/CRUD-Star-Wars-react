@@ -1,0 +1,27 @@
+.modal-form {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(230, 245, 39, 0.22);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form.is-open {
+  display: flex;
+}
+
+.modal-form-container {
+  position: relative;
+  padding: 1rem;
+  background-color: #5d5e60;
+  min-width: 480px;
+  max-width: 720px;
+  min-height: 200px;
+  max-height: 300px;
+  border-radius: 0.5rem;
+}
