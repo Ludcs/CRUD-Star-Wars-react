@@ -1,13 +1,6 @@
 {
   "characters": [
     {
-      "name": "Qui Gon Jinn",
-      "urlImg": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2020/05/23/5fa92520c92df.jpeg",
-      "phrase": "La capacidad de hablar no te hace inteligente",
-      "color": "pink",
-      "id": 1637759926813
-    },
-    {
       "name": "Luck Skywalker",
       "urlImg": "https://elcomercio.pe/resizer/EjmehelmOk1BxT7upG_dfdw78eA=/1200x900/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/4AEQDOF6GVA3FHVR2J7MTIERUA.jpg",
       "phrase": "Actúa solo cuando puedas mantener el equilibrio",
@@ -167,6 +160,13 @@
       "phrase": "Soy tu padre",
       "color": "red",
       "id": 1657135654372
+    },
+    {
+      "name": "Ikki",
+      "urlImg": "https://i1.wp.com/wipy.tv/wp-content/uploads/2020/01/Maz-Kanata-era-un-animatronic-en-The-Rise-of-Skywalker-1.jpg?w=1000&ssl=1",
+      "phrase": "Star in the ocean",
+      "color": "blue",
+      "id": 1657144150820
     }
   ]
 }

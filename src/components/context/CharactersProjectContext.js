@@ -1,4 +1,3 @@
-/* import axios from 'axios'; */
 import {createContext, useEffect, useState} from 'react';
 import {helpHttp} from '../../helpers/helpHttp';
 import {getData} from '../../services/getAxios';
@@ -19,16 +18,32 @@ const CharactersProjectProvider = ({children}) => {
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  /*   const loadCharacters = async () => {
-    const response = await axios.get(process.env.REACT_APP_MY_FAKE_API_URL);
-    setDb(response.data);
-  };
-  useEffect(() => {
+  /*   useEffect(() => {
     loadCharacters();
-  }, [form]); */
+  }, [form]);
+
+  const loadCharacters = async () => {
+    const devEnv = process.env.NODE_ENV !== 'production';
+    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
+      process.env;
+    const response = await axios.get(
+      `${
+        devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
+      }`
+    );
+    setDb(response.data);
+  }; */
 
   useEffect(() => {
-    getData(process.env.REACT_APP_MY_FAKE_API_URL).then((res) => {
+    const devEnv = process.env.NODE_ENV !== 'production';
+    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
+      process.env;
+
+    getData(
+      `${
+        devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
+      }`
+    ).then((res) => {
       //console.log(res);
       if (!res.err) {
         setDb(res);
@@ -39,6 +54,10 @@ const CharactersProjectProvider = ({children}) => {
   }, [form]);
 
   const createData = (data) => {
+    const devEnv = process.env.NODE_ENV !== 'production';
+    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
+      process.env;
+
     data.id = Date.now();
 
     let options = {
@@ -47,14 +66,28 @@ const CharactersProjectProvider = ({children}) => {
     };
 
     helpHttp()
-      .post(process.env.REACT_APP_MY_FAKE_API_URL, options)
+      .post(
+        `${
+          devEnv
+            ? REACT_APP_DEV_MY_FAKE_API_URL
+            : REACT_APP_PROD_MY_FAKE_API_URL
+        }`,
+        options
+      )
       .then((res) => {
         console.log(res);
       });
   };
+
   const updateData = (data) => {
     //console.log(data);
-    let endpoint = `${process.env.REACT_APP_MY_FAKE_API_URL}/${data.id}`;
+    const devEnv = process.env.NODE_ENV !== 'production';
+    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
+      process.env;
+
+    let endpoint = `${
+      devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
+    }/${data.id}`;
     let options = {
       body: data,
       headers: {'content-type': 'application/json'},
@@ -71,10 +104,16 @@ const CharactersProjectProvider = ({children}) => {
       });
   };
   const deleteData = (id, name) => {
+    const devEnv = process.env.NODE_ENV !== 'production';
+    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
+      process.env;
+
     let isDelete = window.confirm(`¿Estas seguro de eliminar a ${name}?`);
 
     if (isDelete) {
-      let endpoint = `${process.env.REACT_APP_MY_FAKE_API_URL}/${id}`;
+      let endpoint = `${
+        devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
+      }/${id}`;
       let options = {
         headers: {'content-type': 'application/json'},
       };
