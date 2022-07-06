@@ -52,13 +52,6 @@
     {
       "name": "Darth Vader",
       "urlImg": "https://i1.wp.com/wipy.tv/wp-content/uploads/2020/01/Maz-Kanata-era-un-animatronic-en-The-Rise-of-Skywalker-1.jpg?w=1000&ssl=1",
-      "phrase": "Star in the ocean",
-      "color": "green",
-      "id": 1637765115886
-    },
-    {
-      "name": "Darth Vader",
-      "urlImg": "https://i1.wp.com/wipy.tv/wp-content/uploads/2020/01/Maz-Kanata-era-un-animatronic-en-The-Rise-of-Skywalker-1.jpg?w=1000&ssl=1",
       "phrase": "Soy tu padre",
       "color": "black",
       "id": 1638915321197
@@ -160,13 +153,6 @@
       "phrase": "Soy tu padre",
       "color": "black",
       "id": 1656974690725
-    },
-    {
-      "name": "Chuwaka",
-      "urlImg": "https://i1.wp.com/wipy.tv/wp-content/uploads/2020/01/Maz-Kanata-era-un-animatronic-en-The-Rise-of-Skywalker-1.jpg?w=1000&ssl=1",
-      "phrase": "Practicality beats purity.",
-      "color": "black",
-      "id": 1657026390424
     }
   ]
 }

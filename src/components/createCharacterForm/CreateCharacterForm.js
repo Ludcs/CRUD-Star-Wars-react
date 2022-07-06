@@ -1,26 +1,25 @@
-import React, { Fragment, useContext } from "react";
-import styled from "styled-components";
-import starFontTitle from "../../fonts/star-font.ttf";
-import starFontOpening from "../../fonts/star-opening-font.ttf";
-import CreateCharacterPhrases from "../createCharacterPhrases/CreateCharacterPhrases";
-import { useModal } from "../../hooks/useModal";
-import CreateCharacterModal from "../createCharacterModal/CreateCharacterModal";
-import { Form, Option, Select } from "./styles";
-import CharactersProjectContext from "../context/CharactersProjectContext";
+import React, {Fragment, useContext} from 'react';
+import styled from 'styled-components';
+import starFontTitle from '../../fonts/star-font.ttf';
+import starFontOpening from '../../fonts/star-opening-font.ttf';
+import CreateCharacterPhrases from '../createCharacterPhrases/CreateCharacterPhrases';
+import {useModal} from '../../hooks/useModal';
+import CreateCharacterModal from '../createCharacterModal/CreateCharacterModal';
+import {Form, Option, Select} from './styles';
+import CharactersProjectContext from '../context/CharactersProjectContext';
 
 const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 870px;
-  height: 400px;
-  margin-top: 5rem;
 
   form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 300px;
-    height: auto;
+    height: 80vh;
   }
 
   input {
@@ -32,7 +31,7 @@ const StyledDiv = styled.div`
 
   button {
     @font-face {
-      font-family: "Star Jedi";
+      font-family: 'Star Jedi';
       src: url(${starFontTitle});
     }
     justify-content: center;
@@ -40,7 +39,7 @@ const StyledDiv = styled.div`
     width: auto;
     padding: 0 5px;
     font-size: 1.8rem;
-    font-family: "Star Jedi";
+    font-family: 'Star Jedi';
     border: none;
     border-radius: 4px;
 
@@ -60,7 +59,7 @@ const StyledDiv = styled.div`
 
   .getphrase {
     @font-face {
-      font-family: "Star Jedi";
+      font-family: 'Star Jedi';
       src: url(${starFontTitle});
     }
     justify-content: center;
@@ -69,7 +68,7 @@ const StyledDiv = styled.div`
     margin-bottom: 1rem;
     padding: 0 5px;
     font-size: 1.8rem;
-    font-family: "Star Jedi";
+    font-family: 'Star Jedi';
     border: none;
     border-radius: 4px;
     background-color: white;
@@ -83,13 +82,13 @@ const StyledDiv = styled.div`
 
   label {
     @font-face {
-      font-family: "Franklin Gothic Book";
+      font-family: 'Franklin Gothic Book';
       src: url(${starFontOpening});
     }
     margin: 2rem 0 0.3rem 0;
     text-align: center;
     font-size: 2.5rem;
-    font-family: "Franklin Gothic Book";
+    font-family: 'Franklin Gothic Book';
     color: rgb(75, 213, 238);
     letter-spacing: 0.5rem;
     font-weight: 800;
@@ -97,10 +96,10 @@ const StyledDiv = styled.div`
 
   select {
     @font-face {
-      font-family: "Franklin Gothic Book";
+      font-family: 'Franklin Gothic Book';
       src: url(${starFontOpening});
     }
-    font-family: "Franklin Gothic Book";
+    font-family: 'Franklin Gothic Book';
     height: 3.5rem;
     margin: 1rem 0;
     font-size: 2rem;
@@ -110,10 +109,10 @@ const StyledDiv = styled.div`
 
   option {
     @font-face {
-      font-family: "Franklin Gothic Book";
+      font-family: 'Franklin Gothic Book';
       src: url(${starFontOpening});
     }
-    font-family: "Franklin Gothic Book";
+    font-family: 'Franklin Gothic Book';
     font-size: 2rem;
     font-weight: 600;
     &.red {
@@ -135,14 +134,14 @@ const StyledDiv = styled.div`
 `;
 
 const CreateCharacterForm = () => {
-  const { createData, initialForm, form, setForm, visible, setVisible } =
+  const {createData, initialForm, form, setForm, visible, setVisible} =
     useContext(CharactersProjectContext);
   const [isOpenModalForm, openModal, closeModal] = useModal(false);
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!form.name || !form.urlImg || !form.phrase || !form.color) {
-      alert("Completa todos los campos");
+      alert('Completa todos los campos');
       return;
     }
 
