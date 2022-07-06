@@ -19,16 +19,14 @@ const CharactersProjectProvider = ({children}) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    helpHttp()
-      .get(process.env.REACT_APP_MY_FAKE_API_URL)
-      .then((res) => {
-        //console.log(res);
-        if (!res.err) {
-          setDb(res);
-        } else {
-          setDb(null);
-        }
-      });
+    getData(process.env.REACT_APP_MY_FAKE_API_URL).then((res) => {
+      //console.log(res);
+      if (!res.err) {
+        setDb(res);
+      } else {
+        setDb(null);
+      }
+    });
   }, [form]);
 
   const createData = (data) => {
