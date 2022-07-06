@@ -153,6 +153,20 @@
       "phrase": "Soy tu padre",
       "color": "black",
       "id": 1656974690725
+    },
+    {
+      "name": "Chuwaka",
+      "urlImg": "https://i1.wp.com/wipy.tv/wp-content/uploads/2020/01/Maz-Kanata-era-un-animatronic-en-The-Rise-of-Skywalker-1.jpg?w=1000&ssl=1",
+      "phrase": "Star in the ocean",
+      "color": "pink",
+      "id": 1657135619864
+    },
+    {
+      "name": "Darth Vader",
+      "urlImg": "https://static.wikia.nocookie.net/esstarwars/images/6/6c/Maz_Kanata.png/revision/latest/scale-to-width-down/416?cb=20151224053857",
+      "phrase": "Soy tu padre",
+      "color": "red",
+      "id": 1657135654372
     }
   ]
 }

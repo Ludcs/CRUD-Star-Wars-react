@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {createContext, useEffect, useState} from 'react';
 import {helpHttp} from '../../helpers/helpHttp';
 import {getData} from '../../services/getAxios';
@@ -18,7 +19,16 @@ const CharactersProjectProvider = ({children}) => {
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const loadCharacters = async () => {
+    const response = await axios.get(process.env.REACT_APP_MY_FAKE_API_URL);
+    setDb(response.data);
+  };
+
   useEffect(() => {
+    loadCharacters();
+  }, [form]);
+
+  /* useEffect(() => {
     getData(process.env.REACT_APP_MY_FAKE_API_URL).then((res) => {
       //console.log(res);
       if (!res.err) {
@@ -27,7 +37,7 @@ const CharactersProjectProvider = ({children}) => {
         setDb(null);
       }
     });
-  }, [form]);
+  }, [form]); */
 
   const createData = (data) => {
     data.id = Date.now();
