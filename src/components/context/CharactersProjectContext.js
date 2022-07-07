@@ -18,22 +18,6 @@ const CharactersProjectProvider = ({children}) => {
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  /*   useEffect(() => {
-    loadCharacters();
-  }, [form]);
-
-  const loadCharacters = async () => {
-    const devEnv = process.env.NODE_ENV !== 'production';
-    const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
-      process.env;
-    const response = await axios.get(
-      `${
-        devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
-      }`
-    );
-    setDb(response.data);
-  }; */
-
   useEffect(() => {
     const devEnv = process.env.NODE_ENV !== 'production';
     const {REACT_APP_DEV_MY_FAKE_API_URL, REACT_APP_PROD_MY_FAKE_API_URL} =
@@ -44,7 +28,6 @@ const CharactersProjectProvider = ({children}) => {
         devEnv ? REACT_APP_DEV_MY_FAKE_API_URL : REACT_APP_PROD_MY_FAKE_API_URL
       }`
     ).then((res) => {
-      //console.log(res);
       if (!res.err) {
         setDb(res);
       } else {
@@ -96,7 +79,6 @@ const CharactersProjectProvider = ({children}) => {
     helpHttp()
       .put(endpoint, options)
       .then((res) => {
-        //console.log(res);
         if (!res.err) {
           let newDaata = db.map((el) => (el.id === data.id ? data : el));
           setDb(newDaata);

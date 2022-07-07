@@ -1,7 +1,6 @@
 import './CreateCharacterModal.css';
 import {P, DivP, DivButtons} from './styles';
 import {useHistory} from 'react-router-dom';
-/* import {helpHttp} from '../../helpers/helpHttp'; */
 
 const CreateCharacterModal = ({isOpen, closeModal}) => {
   const handleModalContainerClickForm = (e) => e.stopPropagation();

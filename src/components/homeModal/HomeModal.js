@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
-import CharactersProjectContext from "../context/CharactersProjectContext";
-import "./HomeModal.css";
-import { Div, Form, Input, Select, Option, DivButton, Button } from "./styles";
+import React, {useContext, useState} from 'react';
+import CharactersProjectContext from '../context/CharactersProjectContext';
+import './HomeModal.css';
+import {Div, Form, Input, Select, Option, DivButton, Button} from './styles';
 
-const HomeModal = ({ isOpen, closeModal, character }) => {
-  const { updateData } = useContext(CharactersProjectContext);
+const HomeModal = ({isOpen, closeModal, character}) => {
+  const {updateData} = useContext(CharactersProjectContext);
   const [formState, setFormState] = useState({
     name: character.name,
     urlImg: character.urlImg,
@@ -16,25 +16,25 @@ const HomeModal = ({ isOpen, closeModal, character }) => {
   const handleModalContainerClick = (e) => e.stopPropagation();
 
   const handleFormModalChange = (e, type) => {
-    if (type === "nombre") {
+    if (type === 'nombre') {
       setFormState((prevState) => {
-        return { ...prevState, name: e.target.value };
+        return {...prevState, name: e.target.value};
       });
     }
-    if (type === "urlimg") {
+    if (type === 'urlimg') {
       setFormState((prevState) => {
-        return { ...prevState, urlImg: e.target.value };
+        return {...prevState, urlImg: e.target.value};
       });
     }
-    if (type === "phrase") {
+    if (type === 'phrase') {
       setFormState((prevState) => {
-        return { ...prevState, phrase: e.target.value };
+        return {...prevState, phrase: e.target.value};
       });
     }
 
-    if (type === "color") {
+    if (type === 'color') {
       setFormState((prevState) => {
-        return { ...prevState, color: e.target.value };
+        return {...prevState, color: e.target.value};
       });
     }
   };
@@ -56,7 +56,7 @@ const HomeModal = ({ isOpen, closeModal, character }) => {
   };
 
   return (
-    <article className={`modal ${isOpen && "is-open"}`} onClick={closeModal}>
+    <article className={`modal ${isOpen && 'is-open'}`} onClick={closeModal}>
       <div className="modal-container" onClick={handleModalContainerClick}>
         <Div>
           <Form>
@@ -64,63 +64,43 @@ const HomeModal = ({ isOpen, closeModal, character }) => {
               type="text"
               placeholder="Nombre"
               value={formState.name}
-              onChange={(e) => handleFormModalChange(e, "nombre")}
+              onChange={(e) => handleFormModalChange(e, 'nombre')}
               colorProp={formState.color}
             />
             <Input
               type="text"
               placeholder="Url"
               value={formState.urlImg}
-              onChange={(e) => handleFormModalChange(e, "urlimg")}
+              onChange={(e) => handleFormModalChange(e, 'urlimg')}
               colorProp={formState.color}
             />
             <Input
               type="text"
               placeholder="Frase"
               value={formState.phrase}
-              onChange={(e) => handleFormModalChange(e, "phrase")}
+              onChange={(e) => handleFormModalChange(e, 'phrase')}
               colorProp={formState.color}
             />
             <Select
-              onChange={(e) => handleFormModalChange(e, "color")}
+              onChange={(e) => handleFormModalChange(e, 'color')}
               name="color"
               id="color"
               colorProp={formState.color}
               defaultValue={formState.color}
             >
-              <Option
-                //selected={formState.color === "blue"}
-                value="blue"
-                className="blue"
-              >
+              <Option value="blue" className="blue">
                 Azul
               </Option>
-              <Option
-                //selected={formState.color === "black"}
-                value="black"
-                className="black"
-              >
+              <Option value="black" className="black">
                 Negro
               </Option>
-              <Option
-                //selected={formState.color === "green"}
-                value="green"
-                className="green"
-              >
+              <Option value="green" className="green">
                 Verde
               </Option>
-              <Option
-                //selected={formState.color === "red"}
-                value="red"
-                className="red"
-              >
+              <Option value="red" className="red">
                 Rojo
               </Option>
-              <Option
-                //selected={formState.color === "pink"}
-                value="pink"
-                className="pink"
-              >
+              <Option value="pink" className="pink">
                 Rosado
               </Option>
             </Select>

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import starFontOpening from "../../fonts/star-opening-font.ttf";
+import styled from 'styled-components';
+import starFontOpening from '../../fonts/star-opening-font.ttf';
 
 export const DivP = styled.div`
   display: flex;
@@ -11,13 +11,11 @@ export const DivP = styled.div`
 
 export const P = styled.p`
   @font-face {
-    font-family: "Franklin Gothic Book";
+    font-family: 'Franklin Gothic Book';
     src: url(${starFontOpening});
   }
-  font-family: "Franklin Gothic Book";
+  font-family: 'Franklin Gothic Book';
   color: rgb(75, 213, 238);
-  /* -webkit-text-stroke: 0.8px black; */
-  /* color: rgb(75, 213, 238); */
   font-weight: 600;
   text-align: center;
   font-size: 4rem;
